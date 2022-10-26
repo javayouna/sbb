@@ -1,0 +1,27 @@
+package com.mysite.sbb.controller;
+
+
+import com.mysite.sbb.entity.Question;
+import com.mysite.sbb.repository.QuestionRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
+
+@RequiredArgsConstructor //questionRepository 속성을포함하는 생성자
+@Controller
+public class QuestionController {
+
+
+    private final QuestionRepository questionRepository;
+
+    @RequestMapping("/question/list")
+    public String list(Model model){
+    List<Question> questionList=this.questionRepository.findAll();
+    model.addAttribute("questionList",questionList);
+    return "question_list";
+}
+
+}
