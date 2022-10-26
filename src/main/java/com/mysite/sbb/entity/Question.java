@@ -1,6 +1,10 @@
 package com.mysite.sbb.entity;
 
 
+<<<<<<< HEAD
+=======
+import lombok.Data;
+>>>>>>> 412e084 (Initial commit)
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +15,10 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+<<<<<<< HEAD
+=======
+@Data
+>>>>>>> 412e084 (Initial commit)
 public class Question {
     @Id //기본키
     @GeneratedValue(strategy = GenerationType.IDENTITY) //자동1씩 증가
