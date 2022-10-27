@@ -8,8 +8,8 @@
 <body>
 <div layout:fragment="content" class="container">
   <h5 class="my-3 border-bottom pb-2">질문등록</h5>
-
-  <form th:action="@{/question/create}" th:object="${questionForm}" method="post">
+  <!--CSRF 값을 수동으로 추가하기 위해 from action 지웠음-->
+  <form th:object="${questionForm}" method="post">
       <div th:replace="form_errors :: formErrorsFragment"></div>
     <div class="mb-3">
       <label for="subject" class="form-label">제목</label>

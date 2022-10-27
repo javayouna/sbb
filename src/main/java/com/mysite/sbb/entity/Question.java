@@ -25,8 +25,13 @@ public class Question {
     private String content;
 
     private LocalDateTime createDate;
+    private LocalDateTime modifyDate;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     private List<Answer> answerList;
+
+    //글쓴이 항목
+    @ManyToOne
+    private SiteUser author;
 
 }

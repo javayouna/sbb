@@ -26,4 +26,9 @@ public class Answer {
     @ManyToOne //Answer + Question 연결
     private Question question;
 
+    //글쓴이
+    @ManyToOne
+    private SiteUser author;
+
+    private LocalDateTime modifyDate;
 }
