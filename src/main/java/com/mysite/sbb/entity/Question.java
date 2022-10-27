@@ -13,7 +13,6 @@ import java.util.List;
 @Setter
 @Entity
 @Data
-
 public class Question {
     @Id //기본키
     @GeneratedValue(strategy = GenerationType.IDENTITY) //자동1씩 증가

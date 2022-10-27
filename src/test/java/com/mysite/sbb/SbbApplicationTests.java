@@ -4,6 +4,7 @@ import com.mysite.sbb.entity.Answer;
 import com.mysite.sbb.entity.Question;
 import com.mysite.sbb.repository.AnswerRepository;
 import com.mysite.sbb.repository.QuestionRepository;
+import com.mysite.sbb.service.QuestionService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,7 +25,8 @@ class SbbApplicationTests {
 
 	@Autowired
 	private AnswerRepository answerRepository;
-
+	@Autowired
+	private QuestionService questionService;
 	//@Test
 	void testJpa() {
 		Question q1 = new Question();
@@ -92,7 +94,7 @@ class SbbApplicationTests {
 		assertEquals(1,this.questionRepository.count());
 	}
 
-	@Test
+	//@Test
 	void AnswerSave(){
 		Optional<Question> oq = this.questionRepository.findById(2);
 		assertTrue(oq.isPresent());
@@ -106,5 +108,13 @@ class SbbApplicationTests {
 
 	}
 
+	//@Test
+	void sampleData(){
+		for(int i=1; i<=300;i++ ){
+			String subject = String.format("테스트 데이터 제목:[%03d]",i);
+			String content="테스트 데이터 내용입니다.";
+			this.questionService.create(subject, content);
+		}
+	}
 
 }

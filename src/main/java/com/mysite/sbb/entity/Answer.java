@@ -19,6 +19,7 @@ public class Answer {
 
     @Column(columnDefinition = "TEXT")
     private String content;
+
     @CreatedDate
     private LocalDateTime createDate;
 
