@@ -29,6 +29,6 @@ public class Answer {
     //글쓴이
     @ManyToOne
     private SiteUser author;
-
+    //수정 시간
     private LocalDateTime modifyDate;
 }
