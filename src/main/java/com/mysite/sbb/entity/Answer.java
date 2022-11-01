@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 public class Answer {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

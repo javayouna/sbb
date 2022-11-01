@@ -16,7 +16,7 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-
+    //회원가입
     public SiteUser create(String username, String email, String password) {
         SiteUser user = new SiteUser();
         user.setUsername(username);
@@ -25,7 +25,6 @@ public class UserService {
         user.setCreateDate(LocalDateTime.now());
         this.userRepository.save(user);
         return user;
-
     }
     //글쓴이
     public SiteUser getUser(String username) {

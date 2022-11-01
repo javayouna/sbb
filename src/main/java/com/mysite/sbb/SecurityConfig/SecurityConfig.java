@@ -29,9 +29,9 @@ public class SecurityConfig {
             .and() //H2 콘솔은 예외처리
                 .csrf().ignoringAntMatchers("/h2-console/**") //H2 콘솔은 예외처리2
             .and() //H2 프레임 예외처리
-            .headers()
-            .addHeaderWriter(new XFrameOptionsHeaderWriter(
-                    XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN))
+                .headers()
+                .addHeaderWriter(new XFrameOptionsHeaderWriter(
+                        XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN))
             //=>로그인 하지 않아도 모든 페이지에 접근 가능
             .and()
                 .formLogin()
@@ -39,14 +39,15 @@ public class SecurityConfig {
                 .defaultSuccessUrl("/")
             //=>로그아웃
             .and()
-            .logout()
-            .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
-            .logoutSuccessUrl("/")
-            .invalidateHttpSession(true)
-    ;
+                .logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
+                .logoutSuccessUrl("/")
+                .invalidateHttpSession(true);
+
     return http.build();
 }
-
+    
+    //비밀번호 암호화
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();

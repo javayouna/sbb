@@ -2,9 +2,7 @@ package com.mysite.sbb.entity;
 
 import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -28,5 +26,4 @@ public class SiteUser {
     private String email;
 
     private LocalDateTime createDate;
-
 }

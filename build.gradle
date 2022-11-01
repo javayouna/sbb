@@ -13,6 +13,7 @@ repositories {
 }
 
 dependencies {
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
@@ -22,10 +23,15 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	runtimeOnly 'com.h2database:h2'
+	//mariadb
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	//runtimeOnly 'com.h2database:h2'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	//질문 or 내용 등록할 때 비어있는 값으로 등록가능, 빈 값으로 등록 못하게 하기
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+
+
 }
 
 tasks.named('test') {
